@@ -1,0 +1,15 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "dartpr",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.6"
+    }
+  ],
+  "generated": "2025-01-29T01:21:07.269742Z",
+  "generator": "pub",
+  "generatorVersion": "3.6.1",
+  "pubCache": "file:///C:/Users/ms371/AppData/Local/Pub/Cache"
+}
