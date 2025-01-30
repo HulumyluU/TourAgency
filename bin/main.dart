@@ -2,10 +2,12 @@ import 'customer.dart'; // Import customer classes
 import 'handleBookings.dart'; // Import handleBookings function
 
 void main() {
-  print("Wsp, welcome to our agency! We need some info to book your trip.");
+  print("✨ Welcome to our Travel Booking Agency! ✨");
+  print("We’re here to make your journey smooth and hassle-free.");
+  print("Let's gather some details to book your perfect trip!\n");
 
-  List<Customer> customers = []; // Store multiple customers
-  handleBookings(customers); // Call the extracted method
+  List<Customer> customers = [];
+  handleBookings(customers); 
 }
 
 

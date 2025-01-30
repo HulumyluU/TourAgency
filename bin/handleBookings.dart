@@ -12,7 +12,7 @@ void handleBookings(List<Customer> customers) {
     totalPrice += customer.tripPrice; // Add trip price to total
 
     String another = getLowerInput("\nDo you want to add another customer? (y/n): ");
-    if (another != "y") break; // Exit loop if user says "no"
+    if (another[0] != "y") break; // Exit loop if user says have not say yeeeeeeee
   }
 
   displayBookings(customers, totalPrice);
