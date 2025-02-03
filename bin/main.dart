@@ -1,5 +1,5 @@
-import 'customer.dart'; // Import customer classes
-import 'handleBookings.dart'; // Import handleBookings function
+import 'classes/customer.dart'; // Import customer classes
+import 'components/handleBookings.dart'; // Import handleBookings function
 
 void main() {
   print("______________________________________________________\n");
@@ -8,7 +8,9 @@ void main() {
   print("Let's gather some details to book your perfect trip!\n");
 
   List<Customer> customers = [];
-  handleBookings(customers); 
+  handleBookings(customers);
+
+  print("\n🌟 Thank you for choosing our services! 🌟");
 }
 
 

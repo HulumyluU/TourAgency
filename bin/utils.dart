@@ -6,18 +6,10 @@ String getInput(String prompt) {
   return stdin.readLineSync() ?? "";
 }
 
-// Function to convert input to lowercase
 String getLowerInput(String prompt) {
   return toLower(getInput(prompt));
 }
 
-// Function to validate phone numbers (Basic example)
-bool isValidPhone(String phone) {
-  RegExp phoneRegex = RegExp(r'^(\d{3}-\d{3}-\d{4}|\d{10})$');
-  return phoneRegex.hasMatch(phone);
-}
-
-//to Lower function
 String toLower(String input) {
   String result = '';
   for (int i = 0; i < input.length; i++) {
@@ -51,13 +43,17 @@ String getValidPhone(String prompt) {
       }
       return phone;
     } else {
-      print(
-          "Invalid phone format! Please enter in 123-456-7890 or 1231231212 format.");
+      print("Invalid phone format! Please enter in 123-456-7890 or 1231231212 format.");
     }
   }
 }
 
-// Function to validate price input
+bool isValidPhone(String phone) {
+  RegExp phoneRegex = RegExp(r'^(\d{3}-\d{3}-\d{4}|\d{10})$');
+  return phoneRegex.hasMatch(phone);
+}
+
+
 double getValidPrice(String prompt) {
   while (true) {
     String input = getInput(prompt);
@@ -69,9 +65,6 @@ double getValidPrice(String prompt) {
   }
 }
 
-//validate insurancce number ;
-
-// Function to validate insurance number with a custom prompt
 String validateInsuranceNumber(String prompt) {
   RegExp regex = RegExp(r'^[Pp]\d{5}$'); // Pattern: 'P' or 'p' followed by 5 digits
   String input;
@@ -84,4 +77,29 @@ String validateInsuranceNumber(String prompt) {
   } while (!regex.hasMatch(input));
   
   return input;
+}
+
+
+
+
+// Function to validate that the user input is one of "1", "2", or "3"
+String validateChoice(String prompt) {
+  while (true) {
+    // Use getLowerInput to get the user's input in lowercase (if needed)
+    String input = getLowerInput(prompt);
+    
+    // Check if the input is one of the valid choices
+    if (input == "1" || input == "2" || input == "3") {
+      return input;
+    }
+    
+    // If input is not valid, print an error message and loop again.
+    print("Invalid choice! Please enter 1, 2, or 3.");
+  }
+}
+
+double roundPrice(double price) {
+  int integerPart = price.floor();
+  double fraction = price - integerPart;
+  return fraction >= 0.5 ? integerPart + 1.0 : integerPart.toDouble();
 }

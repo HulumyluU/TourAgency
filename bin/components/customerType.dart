@@ -1,12 +1,15 @@
 
 import 'dart:io';
-import 'utils.dart'; // Import utility functions
-import 'customer.dart'; 
+import '../utils.dart'; // Import utility functions
+import '../classes/customer.dart'; 
+import '../classes/individual.dart';
+import '../classes/family.dart';
+import '../classes/group.dart';
 
 Customer customerType(String choice, String destination, String phone, String contactName, double tripPrice) {
   Customer customer;
 
-  switch (choice) {
+  switch (choice) { // chose is user input (1/3) as u can already know
     case "1":
       String insuranceNumber = validateInsuranceNumber("Enter Insurance Number (P12345),('P' or 'p' followed by 5 digits): ");
       String workPlace = getLowerInput("Enter your workPlace: ");
@@ -27,9 +30,7 @@ Customer customerType(String choice, String destination, String phone, String co
       customer = Group(destination, phone, contactName, tripPrice, organizingHardware, acceptingCompany);
       (customer as Group).notifyDestinationCompany();
       break;
-
     default:
-      print("Invalid choice. Please restart the program.");
       exit(1);
   }
 
