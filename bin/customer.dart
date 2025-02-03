@@ -16,6 +16,7 @@ class Customer {
 
   void displayInfo() {
     print("\nBooking Summary:");
+    print("The transportation to Airport have been booked for $contactName.");
     print("Destination: $destination");
     print("Phone: $phone");
     print("Contact Name: $contactName");
@@ -25,10 +26,12 @@ class Customer {
 
 class Individual extends Customer {
   String insuranceNumber;
+  String workPlace;
 
-  Individual(
-      String destination, String phone, String contactName, double tripPrice, this.insuranceNumber)
-      : super(destination, phone, contactName, tripPrice);// Calls the Customer constructor to initialize common properties
+  Individual(String destination, String phone, String contactName,
+      double tripPrice, this.insuranceNumber, this.workPlace)
+      : super(destination, phone, contactName,
+            tripPrice); // Calls the Customer constructor to initialize common properties
 
   void notifyWorkplace() {
     print("-----------------------------");
@@ -39,6 +42,7 @@ class Individual extends Customer {
   void displayInfo() {
     super.displayInfo();
     print("Travel Insurance: $insuranceNumber");
+    print("Workplace: $workPlace");
   }
 }
 

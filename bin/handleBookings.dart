@@ -23,7 +23,7 @@ void displayBookings(List<Customer> customers, double totalPrice) {
   print("\n📌 All Bookings:");
   for (var customer in customers) {
     customer.displayInfo();
-    print("----------------------------------N:${++customerNumber}");
+    print("----------------------------------");
   }
   print("Total Bookings: $customerNumber");
   print("\n💰 Total Price of All Bookings: \$$totalPrice");

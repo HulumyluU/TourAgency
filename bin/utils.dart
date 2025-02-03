@@ -28,9 +28,9 @@ String toLower(String input) {
       // Convert to lowercase by adjusting the ASCII value
       charCode += 32;
       //explocation why i am adding 32 and not 26(26 letters in alphabet):
-        //Uppercase letters ('A' to 'Z') have ASCII values from 65 to 90.
-        //Lowercase letters ('a' to 'z') have ASCII values from 97 to 122.
-        //have no idea what and why are those 7 characters between 90 and 97
+      //Uppercase letters ('A' to 'Z') have ASCII values from 65 to 90.
+      //Lowercase letters ('a' to 'z') have ASCII values from 97 to 122.
+      //have no idea what and why are those 7 characters between 90 and 97
     }
 
     // modified character
@@ -67,4 +67,21 @@ double getValidPrice(String prompt) {
       print("Invalid price. Please enter a valid number.");
     }
   }
+}
+
+//validate insurancce number ;
+
+// Function to validate insurance number with a custom prompt
+String validateInsuranceNumber(String prompt) {
+  RegExp regex = RegExp(r'^[Pp]\d{5}$'); // Pattern: 'P' or 'p' followed by 5 digits
+  String input;
+  
+  do {
+    input = getLowerInput(prompt);
+    if (!regex.hasMatch(input)) {
+      print("Invalid format! Please enter in the format P12345.");
+    }
+  } while (!regex.hasMatch(input));
+  
+  return input;
 }

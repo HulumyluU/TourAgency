@@ -8,8 +8,9 @@ Customer customerType(String choice, String destination, String phone, String co
 
   switch (choice) {
     case "1":
-      String insuranceNumber = getLowerInput("Enter Insurance Number (P12345): ");
-      customer = Individual(destination, phone, contactName, tripPrice, insuranceNumber);
+      String insuranceNumber = validateInsuranceNumber("Enter Insurance Number (P12345),('P' or 'p' followed by 5 digits): ");
+      String workPlace = getLowerInput("Enter your workPlace: ");
+      customer = Individual(destination, phone, contactName, tripPrice, insuranceNumber, workPlace);
       (customer as Individual).notifyWorkplace();
       break;
 
