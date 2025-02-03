@@ -12,7 +12,7 @@ Customer customerType(String choice, String destination, String phone, String co
   switch (choice) { // chose is user input (1/3) as u can already know
     case "1":
       String insuranceNumber = validateInsuranceNumber("Enter Insurance Number (P12345),('P' or 'p' followed by 5 digits): ");
-      String workPlace = getLowerInput("Enter your workPlace: ");
+      String workPlace = getLowerInput("Enter your workplace: ");
       customer = Individual(destination, phone, contactName, tripPrice, insuranceNumber, workPlace);
       (customer as Individual).notifyWorkplace();
       break;
